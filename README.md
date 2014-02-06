@@ -1,7 +1,7 @@
 lyricwiki-spotify
 =================
 
-Spotify app displyaing LyricWiki page for currently playing track
+Spotify app displaying LyricWiki page for currently playing track.
 
 ## Curent Status
 
