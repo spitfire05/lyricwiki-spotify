@@ -8,6 +8,10 @@ require([
         document.getElementById("lyrics").innerHTML = "<h1>No lyrics found! :(</h1><h2>Try modifying the artist or song name above.</h2>";
     };
     
+    var handleAd = function() {
+        document.getElementById("lyrics").innerHTML = "<p>That looks like an ad.</p>";
+    }
+    
     var onRefreshButtonClick = function() {
         lasttrack = null;
         update();
@@ -15,7 +19,7 @@ require([
     
     var setupFields = function(track) {
         document.getElementById("field_artist").value = track.artists[0].name;
-        document.getElementById("field_song").value = track.name;
+        document.getElementById("field_song").value = track.name.split(" - ")[0];
     };
     
     var onChange = function() {
@@ -49,11 +53,14 @@ require([
                     }
                 }
             }
-            var artist = encodeURIComponent(document.getElementById("field_artist").value);
-            var songName = encodeURIComponent(document.getElementById("field_song").value);
+            var artist = encodeURIComponent(document.getElementById("field_artist").value.toLowerCase());
+            var songName = encodeURIComponent(document.getElementById("field_song").value.toLowerCase());
             if (artist != "Spotify") {
                 xmlhttp.open("GET", "https://lyrics.wikia.com/api.php?artist=" + artist +"&song=" + songName + "&fmt=json", true);
                 xmlhttp.send();
+            }
+            else {
+                handleAd();
             }
         }
     };
