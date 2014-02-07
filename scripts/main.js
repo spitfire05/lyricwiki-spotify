@@ -8,7 +8,7 @@ require([
         document.getElementById("lyrics").innerHTML = "<h1>No lyrics found! :(</h1><h2>Try modifying the artist or song name above.</h2>";
     };
     
-    var handleAd = function() {
+    var handleAd = function() { 
         document.getElementById("lyrics").innerHTML = "<p>That looks like an ad.</p>";
     }
     
@@ -53,9 +53,9 @@ require([
                     }
                 }
             }
-            var artist = encodeURIComponent(document.getElementById("field_artist").value.toLowerCase());
-            var songName = encodeURIComponent(document.getElementById("field_song").value.toLowerCase());
-            if (artist != "Spotify") {
+            var artist = encodeURIComponent(document.getElementById("field_artist").value.trim().toLowerCase());
+            var songName = encodeURIComponent(document.getElementById("field_song").value.trim().toLowerCase());
+            if (track.artists[0].uri != "spotify:artist:0000000000000000000000") {
                 xmlhttp.open("GET", "https://lyrics.wikia.com/api.php?artist=" + artist +"&song=" + songName + "&fmt=json", true);
                 xmlhttp.send();
             }
