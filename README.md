@@ -9,22 +9,28 @@ Somewhat WIP.
 
 ## Installation
 
-Download snapshot of this repo and put the contents into specified folder.
+Download snapshot of this repo and put the *lyricwiki* folder into Spotify's local app folder.
 
 For Windows:
 ```
-My Documents/Spotify/lyricwiki
+My Documents/Spotify/
 ```
 
 For Linux:
 ```
-~/Spotify/lyricwiki
+~/Spotify/
 ```
+
+So the paths look for example like this:
+```
+My Documents/Spotify/lyricwiki/index.html
+```
+
+..and so on.
 
 Launch spotify, and put following into search bar:
 ```
 spotify:app:lyricwiki
 ```
 
-Press Enter. If the app fails to launch, make sure the root of repo snapshot is in *lyricwiki* folder,
-not *lyricwiki-spotify-master* or any other name.
+And press enter. App will now load.
